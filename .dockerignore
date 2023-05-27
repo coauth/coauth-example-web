@@ -1,0 +1,14 @@
+.dockerignore
+**/*.log
+Dockerfile
+.git
+.gitignore
+.vscode/
+.idea/
+*.iml
+*.iws
+target/
+**/target/
+.sonar/
+.sonarlint/
+.idea

@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  example-web-backend:
+   build:
+     context: ./backend
+     dockerfile: ./Dockerfile-dev
+   image: example-web-backend:latest
+   container_name: example-web-backend 
+   expose:
+     - '8081'
+   network_mode: host
+
+  example-web-frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile-dev
+    image: example-web-frontend:latest
+    container_name: example-web-frontend
+    expose:
+      - '3000'
+    network_mode: host
+    depends_on:
+      - example-web-backend
+
